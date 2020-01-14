@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.scistor.dao.TestDao">
+
+    <resultMap id="list" type="com.scistor.entity.BatNo">
+        <result column="bat_no" property="batNo"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+
+    <select id="findByList" resultMap="list">
+        select * from tb_bat_no;
+
+    </select>
+
+
+    <select id="findById" resultMap="list">
+        select * from tb_bat_no where bat_no = #{batNo}
+
+    </select>
+</mapper>
